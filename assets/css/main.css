@@ -1757,7 +1757,7 @@ input, select, textarea {
 		.image.avatar48 {
 			width: 48px;
 			height: 48px;
-			background: #f00;
+			background: transparent;
 		}
 
 			.image.avatar48 img {
@@ -2217,13 +2217,29 @@ input, select, textarea {
   display: flex;
   justify-content: space-between; /* 图片之间留空 */
   flex-wrap: wrap; /* 屏幕小了会换行 */
-  gap: 10px; /* 可选：图片间距 */
+  gap: 10px; /* 图片间距 */
+  padding: 0 10px; /* 左右各留10px空隙 */
 }
 
 .selfie-row img {
   width: 23%; /* 每张图占容器宽度大约四分之一 */
   height: auto;
   border-radius: 5px; /* 可选：圆角效果 */
+}
+
+.architecture-row {
+  display: flex;
+  justify-content: space-between; /* 图片之间留空 */
+  flex-wrap: wrap; /* 屏幕窄时自动换行 */
+  gap: 10px; /* 图片间距 */
+  padding: 0 10px; /* 左右留空 */
+}
+
+.architecture-row img {
+  flex: 1 1 calc(33.333% - 10px); /* 三张图片均分宽度，减去间距 */
+  max-width: calc(33.333% - 10px); /* 防止图片过宽 */
+  object-fit: cover; /* 保持比例裁剪 */
+  border-radius: 5px;
 }
 
 .dolly-stack {
