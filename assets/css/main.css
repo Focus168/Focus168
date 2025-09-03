@@ -2225,6 +2225,25 @@ input, select, textarea {
   height: auto;
   border-radius: 5px; /* 可选：圆角效果 */
 }
+
+.dolly-stack {
+    position: relative;      /* 父容器相对定位 */
+    width: 100%;             /* 根据需要调整宽度 */
+    max-width: 600px;        /* 可选限制最大宽度 */
+    margin: 0 auto;          /* 居中 */
+}
+
+.dolly-stack img {
+    position: absolute;      /* 叠在一起 */
+    top: 0;
+    left: 0;
+    width: 100%;             /* 填满容器 */
+    opacity: 0;              /* 初始隐藏，可用 JS 或 hover 切换显示 */
+}
+
+.dolly-stack img:first-child {
+    opacity: 1;              /* 默认显示第一张 */
+}
 	
 /* Main */
 
